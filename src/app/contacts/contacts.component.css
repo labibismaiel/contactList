@@ -1,0 +1,27 @@
+.center {
+  text-align: center;
+}
+
+.question {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.header {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.row {
+  height: 40px;
+  border-bottom: solid 1px #ccc;
+  padding-top: 10px;
+}
+
+.row:nth-child(even) {
+  background: #EAEAEA;
+}
+
+h1 {
+  margin-bottom: 40px;
+}

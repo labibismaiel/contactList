@@ -1,0 +1,33 @@
+<simple-notifications [options]="options"></simple-notifications>
+
+<h1 class="center"> Contact Management </h1>
+
+<alert type="danger" [hidden]="!confirm" class="center">
+  <div class="question">
+    Are you sure you want to remove "{{contact.first_name}} {{contact.last_name}}"?
+  </div>
+  <div>
+    <button class="btn btn-danger" (click)="onConfirm(true, contact)">Yes</button>
+    <button class="btn btn-default" (click)="onConfirm(false)">No</button>
+  </div>
+</alert>
+
+<div class="table table-striped">
+
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-1 center header">First Name</div>
+    <div class="col-xs-3 center header">Last Name</div>
+    <div class="col-xs-3 center header">Phone</div>
+  </div>
+
+  <div *ngFor="let item of items;" class="row">
+    <contact [contact]="item" (onEdit)="onEdit($event)" (onRemove)="onRemove($event)"></contact>
+  </div>
+
+</div>
+
+<button class="btn btn-success" (click)="add()">
+  <i class="glyphicon glyphicon-plus"></i> Add a new Contact
+</button>
+
+<modal [contact]="contact" (onSave)="onSave($event)"></modal>
